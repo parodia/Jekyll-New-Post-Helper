@@ -21,6 +21,7 @@ cat > $FILENAME << EOL
 ---
 layout: post
 title:  "$INPUT"
+comments: true
 date:   $DATE $TIME
 categories: code
 ---
