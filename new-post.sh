@@ -8,7 +8,14 @@ if [ -z "$INPUT" ]
    echo "Post title is required"
    exit 1
 fi
-
+echo -n "Enter a category for your post and press [ENTER]: "
+read CATEGORY
+if [ -z "$CATEGORY" ]
+   then
+   echo "Post category is required"
+   exit 1
+fi
+LOWERCATEGORY=$(echo "$CATEGORY" | tr '[:upper:]' '[:lower:]')
 DATE=$(date +"%Y-%m-%d")
 TIME=$(date +"%T")
 
@@ -23,6 +30,6 @@ layout: post
 title:  "$INPUT"
 comments: true
 date:   $DATE $TIME
-categories: code
+categories: [$LOWERCATEGORY]
 ---
 EOL
