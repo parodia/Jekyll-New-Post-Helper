@@ -18,7 +18,7 @@ fi
 LOWERCATEGORY=$(echo "$CATEGORY" | tr '[:upper:]' '[:lower:]')
 DATE=$(date +"%Y-%m-%d")
 TIME=$(date +"%T")
-
+NUMBER=+0700
 STRPTITLE=${INPUT// /-}
 LOWER=$(echo "$STRPTITLE" | tr '[:upper:]' '[:lower:]')
 FILENAME=$(printf "%s-%s.md" "$DATE" "$LOWER")
@@ -29,7 +29,7 @@ cat > $FILENAME << EOL
 layout: post
 title:  "$INPUT"
 comments: true
-date:   $DATE $TIME
+date:   $DATE $TIME $NUMBER
 categories: [$LOWERCATEGORY]
 ---
 EOL
