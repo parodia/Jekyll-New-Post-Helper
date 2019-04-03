@@ -22,6 +22,7 @@ save=$(echo "$date$edit_filename.markdown")
 
 #Options for the adding content.
 title=$(echo -e $filename)
+title="${title^}"
 category=$(echo $category | tr '[:upper:]' '[:lower:]' )
 
 #We will add our options into the file and then saving it with the latest changes.
